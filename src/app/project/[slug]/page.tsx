@@ -5,6 +5,8 @@ import projects from '@data/projects.json';
 import { Project } from '@custom-types/project.types';
 import ProjectInfoCarousel from '@components/carousels/project-info';
 import RecommendationsCarousel from '@components/carousels/recommendations';
+import { Metadata } from 'next';
+import { DEFAULT_METADATA } from '@constants/metadata';
 
 type Props = { params: { slug: string } };
 
@@ -74,4 +76,33 @@ export default function Project({ params }: Props) {
       <RecommendationsCarousel recommendations={recommendations} />
     </main>
   );
+}
+
+export function generateStaticParams() {
+  return projects.map((post) => ({
+    slug: post.slug,
+  }));
+}
+
+export function generateMetadata({ params }: Props): Metadata {
+  const slug = params.slug;
+  const project = projects.find((project) => project.slug === slug);
+
+  const title = `Project - ${project?.title}`;
+
+  return {
+    ...DEFAULT_METADATA,
+    title: title,
+    openGraph: {
+      ...DEFAULT_METADATA.openGraph,
+      title: title,
+      url: 'https://aamoldovanu.com/project/' + slug,
+      images: 'https://aamoldovanu.com' + project?.imageSrc,
+    },
+    twitter: {
+      ...DEFAULT_METADATA.twitter,
+      title: title,
+      images: 'https://aamoldovanu.com' + project?.imageSrc,
+    },
+  };
 }

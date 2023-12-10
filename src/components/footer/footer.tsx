@@ -6,12 +6,16 @@ import Socials from '@components/socials';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { NO_FOOTER_PAGES } from '@constants/constants';
+import projects from '@data/projects.json';
 
 export const Footer = () => {
   const pathname = usePathname();
 
-  // Do not render footer on pages where it is not needed
-  if (NO_FOOTER_PAGES.includes(pathname)) {
+  // @TODO: find a better way of doing this...
+  const isPageNotFound = checkIfPageNotFound(pathname);
+
+  // Do not render footer on pages where it is not needed or 404 pages
+  if (NO_FOOTER_PAGES.includes(pathname) || isPageNotFound) {
     return null;
   }
 
@@ -45,3 +49,17 @@ export const Footer = () => {
     </footer>
   );
 };
+
+// I'm sorry you have to see this 🤦‍♂️
+function checkIfPageNotFound(pathname: string) {
+  const isDynamicRoute = pathname.includes('/project');
+
+  if (isDynamicRoute) {
+    const slug = pathname.split('/project')?.[1];
+    const project = projects?.find((project) => project.slug === slug);
+
+    return !project;
+  }
+
+  return false;
+}
