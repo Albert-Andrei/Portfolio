@@ -87,21 +87,23 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: Props): Metadata {
   const slug = params.slug;
   const project = projects.find((project) => project.slug === slug);
-
-  const title = `Project - ${project?.title}`;
+  const titleMeta = `Project - ${project?.title}`;
 
   return {
     ...DEFAULT_METADATA,
-    title: title,
+    title: titleMeta,
+    description: project?.description,
     openGraph: {
       ...DEFAULT_METADATA.openGraph,
-      title: title,
+      title: titleMeta,
+      description: project?.description,
       url: 'https://aamoldovanu.com/project/' + slug,
       images: 'https://aamoldovanu.com' + project?.imageSrc,
     },
     twitter: {
       ...DEFAULT_METADATA.twitter,
-      title: title,
+      title: titleMeta,
+      description: project?.description,
       images: 'https://aamoldovanu.com' + project?.imageSrc,
     },
   };
