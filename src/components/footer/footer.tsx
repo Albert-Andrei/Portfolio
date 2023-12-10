@@ -52,10 +52,10 @@ export const Footer = () => {
 
 // I'm sorry you have to see this 🤦‍♂️
 function checkIfPageNotFound(pathname: string) {
-  const isDynamicRoute = pathname.includes('/project');
+  const isDynamicRoute = pathname.includes('project');
 
   if (isDynamicRoute) {
-    const slug = pathname.split('/project')?.[1];
+    const slug = pathname.split('/project/')[1];
     const project = projects?.find((project) => project.slug === slug);
 
     return !project;
