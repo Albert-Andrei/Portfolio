@@ -6,7 +6,9 @@ import { Project } from '@custom-types/project.types';
 import ProjectInfoCarousel from '@components/carousels/project-info';
 import RecommendationsCarousel from '@components/carousels/recommendations';
 
-export default function Project({ params }: { params: { slug: string } }) {
+type Props = { params: { slug: string } };
+
+export default function Project({ params }: Props) {
   const project = projects.find(
     (project) => project.slug === params?.slug,
   ) as Project;
