@@ -48,7 +48,7 @@ export const DEFAULT_METADATA: Metadata = {
         url: '/favicon.ico',
         sizes: '48x48',
         type: 'image/x-icon',
-        href: 'https://aamoldovanu.com/favicon.png',
+        href: 'https://aamoldovanu.com/favicon.ico',
       },
       {
         url: '/favicon.png',
@@ -56,7 +56,7 @@ export const DEFAULT_METADATA: Metadata = {
         type: 'image/x-icon',
         href: 'https://aamoldovanu.com/favicon.png',
       },
-      { url: '/favicon.png', sizes: '48x48', type: 'png' },
+      { url: '/favicon.png', sizes: '48x48', type: 'image/png' },
     ],
     shortcut: [
       { url: '/favicon.ico' },
@@ -64,10 +64,16 @@ export const DEFAULT_METADATA: Metadata = {
         url: '/favicon.ico',
         sizes: '48x48',
         type: 'image/x-icon',
-        href: 'https://aamoldovanu.com/favicon.png',
+        href: 'https://aamoldovanu.com/favicon.ico',
       },
       { url: '/favicon.png' },
       { url: '/favicon.png', sizes: '48x48', type: 'png', href: '#' },
+      {
+        url: '/favicon.png',
+        sizes: '48x48',
+        type: 'image/x-icon',
+        href: 'https://aamoldovanu.com/favicon.png',
+      },
     ],
     apple: [
       { url: '/apple-touch-icon.png' },
