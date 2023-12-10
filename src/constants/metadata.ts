@@ -44,11 +44,28 @@ export const DEFAULT_METADATA: Metadata = {
   icons: {
     icon: [
       { url: '/favicon.ico' },
-      { url: '/favicon.png' },
+      {
+        url: '/favicon.ico',
+        sizes: '48x48',
+        type: 'image/x-icon',
+        href: 'https://aamoldovanu.com/favicon.png',
+      },
+      {
+        url: '/favicon.png',
+        sizes: '48x48',
+        type: 'image/x-icon',
+        href: 'https://aamoldovanu.com/favicon.png',
+      },
       { url: '/favicon.png', sizes: '48x48', type: 'png' },
     ],
     shortcut: [
       { url: '/favicon.ico' },
+      {
+        url: '/favicon.ico',
+        sizes: '48x48',
+        type: 'image/x-icon',
+        href: 'https://aamoldovanu.com/favicon.png',
+      },
       { url: '/favicon.png' },
       { url: '/favicon.png', sizes: '48x48', type: 'png', href: '#' },
     ],
