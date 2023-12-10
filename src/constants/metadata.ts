@@ -43,10 +43,15 @@ export const DEFAULT_METADATA: Metadata = {
   },
   icons: {
     icon: [
+      { url: '/favicon.ico' },
       { url: '/favicon.png' },
       { url: '/favicon.png', sizes: '48x48', type: 'png' },
     ],
-    shortcut: ['/favicon.png'],
+    shortcut: [
+      { url: '/favicon.ico' },
+      { url: '/favicon.png' },
+      { url: '/favicon.png', sizes: '48x48', type: 'png', href: '#' },
+    ],
     apple: [
       { url: '/apple-touch-icon.png' },
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'png' },
