@@ -42,8 +42,11 @@ export const DEFAULT_METADATA: Metadata = {
     images: 'https://aamoldovanu.com/preview.jpg',
   },
   icons: {
-    icon: [{ url: '/favicon.ico' }],
-    shortcut: ['/favicon.ico'],
+    icon: [
+      { url: '/favicon.png' },
+      { url: '/favicon.png', sizes: '48x48', type: 'png' },
+    ],
+    shortcut: ['/favicon.png'],
     apple: [
       { url: '/apple-touch-icon.png' },
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'png' },
