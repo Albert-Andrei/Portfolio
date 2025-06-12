@@ -87,16 +87,8 @@ export const DEFAULT_METADATA: Metadata = {
     ],
   },
   robots: {
-    index: false,
+    index: true,
     follow: true,
-    nocache: true,
-    googleBot: {
-      index: true,
-      follow: false,
-      noimageindex: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
+    nocache: false,
   },
 };
